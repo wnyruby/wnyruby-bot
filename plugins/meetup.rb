@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class Meetup
   include Cinch::Plugin
   plugin "meetup"

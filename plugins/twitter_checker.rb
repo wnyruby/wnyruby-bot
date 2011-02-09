@@ -1,3 +1,11 @@
+twitter_config = YAML.load_file(File.join(File.dirname(__FILE__), '../config/twitter.yml'))
+Twitter.configure do |config|
+  config.consumer_key       = twitter_config[:consumer_key]
+  config.consumer_secret    = twitter_config[:consumer_secret]
+  config.oauth_token        = twitter_config[:oauth_tken]
+  config.oauth_token_secret = twitter_config[:oauth_token_secret]
+end
+
 class TwitterChecker
   include Cinch::Plugin
   plugin "twitter-checker"
